@@ -14,9 +14,19 @@ body{
     gap: 100px;
     justify-content: center;
     align-items: center;
-    > button {
-      width: 60px;
-      height: 60px;
+    > #board{
+      width: 1200px;
+      height: 750px;
+      border: 1px solid black;
+      display: flex;
+      flex-direction: row;
+      gap: 100px;
+      justify-content: center;
+      align-items: center;
+      > button {
+        width: 60px;
+        height: 60px;
+      }
     }
   }
 }
