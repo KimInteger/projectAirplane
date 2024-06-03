@@ -10,14 +10,14 @@ body {
   justify-content: center;
   align-items: center;
 }
-body #root {
+body > #root {
   display: flex;
   flex-direction: row;
   gap: 100px;
   justify-content: center;
   align-items: center;
 }
-body #root > button {
+body > #root > button {
   width: 60px;
   height: 60px;
 }/*# sourceMappingURL=style.css.map */
