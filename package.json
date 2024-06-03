@@ -1,0 +1,11 @@
+{
+  "name": "projectairplane",
+  "version": "1.0.0",
+  "description": "\"비행기치는게 목적\"",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "KimInteger",
+  "license": "MIT"
+}
