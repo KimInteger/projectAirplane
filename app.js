@@ -16,17 +16,22 @@ const fileUtills = {
   getFilepath : function(url){
     let filePath = '';
     if(url === '/'){
-      filePath = './public.index.html';
+      filePath = './public/index.html';
     } else if(url.endsWith('.js')) {
-      filePath = `./public/script${url}`;
+      filePath = `./public${url}`;
     } else if(url.endsWith('css')) {
-      filePath = `./public/CSS${url}`;
+      filePath = `./public${url}`;
+    } else if (url === '/favicon.ico') {
+      filePath = '/favicon.ico';
     } else {
-      return;
+      return
     }
     return filePath;
   },
   getExtention : function(filePath){
+    if(filePath === '/favicon.ico'){
+      return;
+    }
     let ext = path.extname(filePath);
     return ext.toLowerCase();
   },
@@ -52,7 +57,29 @@ function connectError(res){
 }
 
 const server = http.createServer((req,res)=>{
-
+  if(req.method === 'GET'){
+    let filePath = fileUtills.getFilepath(req.url);
+    console.log(filePath);
+  
+    let ext = fileUtills.getExtention(filePath);
+    
+    let contentType = fileUtills.getContentType(ext);
+    if(req.url === '/favicon.ico'){
+      return;
+    } else {
+      fs.readFile(filePath,(err,data)=>{
+        if(err){
+          connectError(res);
+          return;
+        } else {
+          res.writeHead(200, {"Content-Type": contentType});
+          res.end(data);
+        }
+      });
+    }
+  } else {
+    notFound(res);
+  }
 });
 
 server.listen(3000,(err)=>{
