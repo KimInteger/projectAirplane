@@ -23,37 +23,7 @@
       <div class="white">시</div>
     </div>
   </div>
-  <script>
-    const audioCtx = new AudioContext;
-
-    audioCtx.currentTime = 1;
-
-    
-    const whiteT = document.getElementsByClassName('white');
-    
-    whiteT[0].addEventListener('mousedown', function(){addOsc(523.25)});
-    whiteT[1].addEventListener('mousedown', function(){addOsc(587.33)});
-    whiteT[2].addEventListener('mousedown', function(){addOsc(659.26)});    
-    whiteT[3].addEventListener('mousedown', function(){addOsc(698.46)});
-    whiteT[4].addEventListener('mousedown', function(){addOsc(783.99)});
-    whiteT[5].addEventListener('mousedown', function(){addOsc(880.00)});
-    whiteT[6].addEventListener('mousedown', function(){addOsc(987.77)});
-    
-    function addOsc(hertz) {
-      let osc = audioCtx.createOscillator();
-      osc.type = "square";
-      osc.frequency.setValueAtTime(hertz, audioCtx.currentTime); 
-      osc.connect(audioCtx.destination);
-      osc.start();
-      setTimeout(()=>{
-        osc.stop();
-      },500);
-    }
-
-
-
-
-  </script>
+  <script src="./script/audioModule.js" type="module"></script>
   <script src="./script/script.js"></script>
 </body>
 </html>
