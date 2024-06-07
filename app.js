@@ -50,3 +50,16 @@ function connectError(res){
   res.writeHead(500,{"Content-Type":"text/plain;charset=UTF-8"});
   res.end('서버 연결 오류');
 }
+
+const server = http.createServer((req,res)=>{
+
+});
+
+server.listen(3000,(err)=>{
+  if(err){
+    console.error(err);
+  } else {
+    console.log('서버 가동중');
+    console.log(`http://localhost:3000`);
+  }
+});
