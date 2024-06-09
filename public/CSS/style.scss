@@ -14,7 +14,15 @@ body{
     gap: 100px;
     justify-content: center;
     align-items: center;
+    > #partition{
+
+    }
+    > #explain{
+      
+    }
     > #board{
+      position: relative;
+      z-index: 1;
       width: 1200px;
       height: 750px;
       border: 1px solid black;
