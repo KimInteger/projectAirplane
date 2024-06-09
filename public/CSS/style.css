@@ -17,12 +17,27 @@ body > #root {
   justify-content: center;
   align-items: center;
 }
+body > #root > button {
+  position: absolute;
+  z-index: 1;
+  top: 50px;
+  right: 100px;
+  width: 100px;
+  height: 60px;
+  font-size: 22px;
+  background-color: #664704;
+  color: white;
+  cursor: pointer;
+}
+body > #root > button:hover {
+  border: 10px solid green;
+}
 body > #root > #partition {
   position: absolute;
   z-index: 2;
   width: 100%;
   height: 100%;
-  visibility: visible;
+  visibility: hidden;
   background-color: rgba(0, 0, 0, 0.4);
 }
 body > #root > #explain {
@@ -37,7 +52,7 @@ body > #root > #explain {
   border-radius: 25px;
   position: absolute;
   z-index: 3;
-  visibility: visible;
+  visibility: hidden;
   background-color: white;
 }
 body > #root > #explain > ol {
