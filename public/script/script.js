@@ -4,6 +4,24 @@ const blackKey = document.getElementsByClassName('black');
 
 const whiteKey = document.getElementsByClassName('white');
 
+const btn = document.getElementsByTagName('button');
+
+const exitBtn = document.getElementById('modal_exit');
+
+const partition = document.getElementById('partition');
+
+const explain = document.getElementById('explain');
+
+btn[0].addEventListener('click',()=>{
+  partition.style.visibility = 'visible';
+  explain.style.visibility = 'visible';
+});
+
+exitBtn.addEventListener('click',()=>{
+  partition.style.visibility = 'hidden';
+  explain.style.visibility = 'hidden';
+});
+
 import { addOsc } from "./audioModule.js";
 
 function hertzvalue(float) {
